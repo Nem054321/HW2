@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<script type="text/javascript">
+function validateForm () {
+	let x = document.forms["myForm"]["username"].value;
+	let y = document.forms["myForm"]["password"].value;
+	if (x == ""){
+		alert ("Username must be filled out"); 
+		return false;
+	}	
+	if (y == ""){
+		alert ("Password must be filled out"); 
+		return false;
+	}
+}
+</script>
+
+<html>
+<head>
+	<title>Home</title>
+	<meta charset="UTF-8">
+	<link rel= "stylesheet" href="{{ url_for ('static', filename= 'css/style.css') }}">
+	<title>FlaskBlog</title>
+</head>
+<body>
+	<h2>Welcome to the TECH 136 blog by LAM HW2</h2>
+<form name=myForm action = "login_action" method = "post" onsubmit="return validateForm()">
+Account:
+<input type = "text" name = "username" value = "" />
+<br>
+Password:
+<input type = "password" name = "password" value = "" />
+<br>
+<input type = "submit" value = "Submit" />
+</form>
+	<h1>
+	<a href='http://127.0.0.1:5001/signup'>Sign up</a><br>
+	</h1 >
+</body>
